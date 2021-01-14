@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <h1 class="display-3">Jumbo heading</h1>
+    <p class="lead">Jumbo helper text</p>
+    <hr class="my-2">
+    <p>More info</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" routerLink="/about" role="button">About</a>
+    </p>
+    <div id="container">
+        <input type="text" [(ngModel)]="variable">
+        <h3>{{variable}}</h3>
+        <input type="number" [(ngModel)]="numero1"><input type="number" [(ngModel)]="numero2">
+        <h3>{{numero1+numero2}}</h3>
+        <h2>Ejercicio 2</h2>
+        <input type="number" [(ngModel)]="numero3">
+        <p *ngIf="numero3==0">
+            Es un 0
+        </p>
+        <h2>Ejercicio 3</h2>
+        <ul>
+            <li *ngFor="let letra of letras">{{letra}}</li>
+        </ul>
+        <h2>Ejercicio 4</h2>
+        <ul>
+            <li *ngFor="let usuario of usuarios">Nombre: {{usuario.nombre}} Apellido: {{usuario.apellido}}</li>
+        </ul>
+        <h2>Ejercicio 5</h2>
+        <ul>
+            <li (click)="usuarioselecionado(usuario.nombre,usuario.apellido)" *ngFor="let usuario of usuarios">Nombre: {{usuario.nombre}} Apellido: {{usuario.apellido}}</li>
+        </ul>
+        <h2 *ngIf="usuario_seleccionado!=null">El usuario que ha seleccionado es {{usuario_seleccionado}}</h2>
+    </div>      
+</div>
