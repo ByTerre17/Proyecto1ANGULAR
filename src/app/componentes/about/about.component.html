@@ -1,1 +1,4 @@
-<p>about works!</p>
+Nombre:<input type="text" [(ngModel)]=nombre><br>
+Apellidos<input type="text" [(ngModel)]=apellidos><br>
+<a routerLink="/hola/{{nombre}}/{{apellidos}}">Mostrar tabla con router link</a><br>
+<a (click)="navegarHacia(nombre,apellidos)">Mostrar tabla a traves del modulo Router</a><br>

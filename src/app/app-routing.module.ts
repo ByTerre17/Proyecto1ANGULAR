@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './componentes/about/about.component';
 import { CalculadoraComponent } from './componentes/calculadora/calculadora.component';
+import { HolaComponent } from './componentes/hola/hola.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoteriaComponent } from './componentes/loteria/loteria.component';
 import { MultiplicarComponent } from './componentes/multiplicar/multiplicar.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: "loteria" , component:LoteriaComponent},
   {path: "calculadora" , component:CalculadoraComponent},
   {path: "multiplicar/:factor" , component:MultiplicarComponent},
+  {path: "hola/:nombre/:apellidos" , component:HolaComponent},
   {path: "**" , component:HomeComponent}
 ];
 

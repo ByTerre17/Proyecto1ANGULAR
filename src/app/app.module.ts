@@ -11,6 +11,7 @@ import { LoteriaComponent } from './componentes/loteria/loteria.component';
 import { GenerarnumeroComponent } from './componentes/generarnumero/generarnumero.component';
 import { CalculadoraComponent } from './componentes/calculadora/calculadora.component';
 import { MultiplicarComponent } from './componentes/multiplicar/multiplicar.component';
+import { HolaComponent } from './componentes/hola/hola.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MultiplicarComponent } from './componentes/multiplicar/multiplicar.comp
     LoteriaComponent,
     GenerarnumeroComponent,
     CalculadoraComponent,
-    MultiplicarComponent
+    MultiplicarComponent,
+    HolaComponent
   ],
   imports: [
     BrowserModule,
