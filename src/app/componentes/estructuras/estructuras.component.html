@@ -1,0 +1,56 @@
+<h5>Estructuras de control con ifElse</h5>
+<label for="verdad">
+<input type="checkbox" id="verdad" [(ngModel)]="verdad">
+</label>
+<h5> {{verdad? " Es verdad " : " Es mentira " }}con ternario</h5>
+<hr>
+<h5 *ngIf = "verdad; else mentira">Es verdad con *ngIf</h5>
+<ng-template #mentira> <h5>Es mentira con *ngIf</h5></ng-template>
+<label for="verdad">
+    <input type="number" id="edad" [(ngModel)]="edad">
+</label>
+    
+    <ng-template #mayor_de_18 *ngIf="edad<30;else mayor_de_30"> <h5 >Es mayor de 18 y menor de 30</h5></ng-template>
+    <ng-template #mayor_de_30><h5>Es mayor de 30</h5> </ng-template>
+    <ng-template [ngIf] = "edad<18" [ngIfElse]="adulto2">Es menor de 18 años</ng-template>
+    <ng-template #adulto2>
+        <ng-template [ngIf] = "edad<30" [ngIfElse]="mayor30_2"><h5>Es menor de 30</h5></ng-template>
+    </ng-template>
+    <ng-template #mayor30_2><h5>Es mayor de 30</h5></ng-template><br>
+
+<ul>
+    <li *ngFor = "let numero of [0,11,22,33,44,55]; let indice=index; let impar=odd; let primero=first;let ultimo=last; let cuenta=count;" [ngClass]="{'text-danger':impar, 'bg-primary':primero}" (click)=muestraLog()>
+        En la posicion {{indice}} de {{cuenta-1}},que es {{impar? "impar":"par"}}, está en número {{numero}},
+        que es el {{primero? " primer elemento del array": ""}},{{ultimo? " ultimo elemento del array": ""}}
+    </li>
+</ul>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Posicion</th>
+            <th>Par/Impar</th>
+            <th>Numero</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr *ngFor = "let numero of [0,11,22,33,44,55]; let indice=index; let impar=odd; let primero=first;let ultimo=last; let cuenta=count;" [ngClass]="{'text-danger':impar, 'bg-primary':primero}" >
+            <td>{{indice}}</td>
+            <td>{{impar? 'impar' : 'par'}}</td>
+            <td>{{numero}}</td>
+        </tr>     
+    </tbody>
+</table>
+<input type="number" placeholder="numero 1" [(ngModel)]=num1>
+<input type="number" placeholder="numero 2" [(ngModel)]=num2>
+<select [(ngModel)]= "operador">
+<option *ngFor="let operacion of operaciones"[value]="operacion">{{operacion}}</option>
+</select>
+<div [ngSwitch] = "operador">
+<span *ngSwitchCase = '"suma"'>{{num1+num2}}</span>
+<span *ngSwitchCase = '"restar"'>{{num1-num2}}</span>
+<span *ngSwitchCase = '"multiplicar"'>{{num1*num2}}</span>
+<span *ngSwitchCase = '"dividir"'>{{num1/num2}}</span>
+<span *ngSwitchDefault>Selecciona una operacion</span>
+
+</div>

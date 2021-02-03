@@ -1,12 +1,13 @@
 import { stringify } from '@angular/compiler/src/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/clases/usuario';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   variable: string= "texto de prueba"
   numero1: number = 0
@@ -25,8 +26,16 @@ export class HomeComponent implements OnInit {
   usuarioselecionado(nombre, apellido){
     this.usuario_seleccionado= nombre + " " + apellido  
   }
+  usuarios2: Usuario[]=[
+    {nombre:"Juan",apellido:"Perez"},
+    {nombre:"Carla",apellido:"Ples"},
+  ]
+  usuario3: Usuario = new Usuario("Juan","Perez",43)
 
   constructor() { }
+  ngOnDestroy(): void {
+    alert("Hasta luego")
+  }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,5 @@
+<input type="text" placeholder="nombre" [(ngModel)]="user.nombre">
+<input type="text" placeholder="apellido" [(ngModel)]="user.apellido">
+<input type="number" placeholder="edad" [(ngModel)]="user.edad">
+<button (click)= "insertar()">Insertar</button>
+<span (click)="alerta(usuario.nombre,usuario.apellido,usuario.edad)" *ngFor="let usuario of users"><br>{{usuario.nombre}} {{usuario.apellido}} {{usuario.edad}}</span>

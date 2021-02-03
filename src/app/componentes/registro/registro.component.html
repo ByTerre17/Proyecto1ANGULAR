@@ -1,0 +1,25 @@
+<form [formGroup]="FormRegister" (submit)="evaluaForm()">
+    <input type="text" formControlName="nombre" placeholder="nombre"><br>
+    <input type="text" formControlName="apellidos" placeholder="apellidos"><br>
+    <input type="text" formControlName="password" placeholder="password"><br>
+    <input type="text" formControlName="email" placeholder="email"><br>
+    <input type="text" formControlName="dni" placeholder="dni"><br>
+    <input type="text" formControlName="telefono" placeholder="telefono"><br>
+    <button type="submit"[disabled]="!FormRegister.valid">Registrar</button><br>
+</form>
+<form [formGroup]="FormRegister2" (submit)="evaluaForm()">
+    <input type="text" formControlName="nombre" placeholder="nombre"><br>
+    <input type="text" formControlName="apellidos" placeholder="apellidos"><br>
+    <input type="text" formControlName="password" placeholder="password"><br>
+    <input type="text" formControlName="email" placeholder="email"><br>
+    <input type="text" formControlName="dni" placeholder="dni"><br>
+    <input type="number" formControlName="telefono" placeholder="telefono"><br>
+    <button type="submit"[disabled]="!FormRegister.valid">Registrar</button><br>
+</form>
+{{dni.errors | json}}
+<div *ngIf ="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+    <div *ngIf="nombre.errors.required">El nombre es requerido</div>
+</div>
+<div *ngIf ="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+    <div *ngIf="email.errors.required">El email es requerido</div>
+</div>

@@ -31,3 +31,6 @@
         <h2 *ngIf="usuario_seleccionado!=null">El usuario que ha seleccionado es {{usuario_seleccionado}}</h2>
     </div>      
 </div>
+<ul>
+    <li (click)="selUser(suario)" *ngFor="let usuario of usuarios">{{usuario.nombre+" "+usuario.apellido}}</li>
+</ul>
