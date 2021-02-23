@@ -1,3 +1,5 @@
-<input type="number" [(ngModel)]="num_entrada">
-<a routerLink="/multiplicar/{{num_entrada}}">Mostrar tabla con router link</a><br>
-<a (click)="navegarHacia(num_entrada)">Mostrar tabla a traves del modulo Router</a><br>
+<div class="container p-3 my-3 border">
+<h2>Inserta un numero para sacar su tabla</h2>
+<input class="form-control" type="number" [(ngModel)]="num_entrada"><br>
+<a class="btn btn-primary" routerLink="/multiplicar/{{num_entrada}}">Mostrar tabla con router link</a><br>
+</div>

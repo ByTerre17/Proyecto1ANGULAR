@@ -1,6 +1,5 @@
 export class Nota {
-    id?: number
+    id: number = -1
     titulo?: string
     contenido?: string
-
 }

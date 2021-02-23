@@ -1,12 +1,7 @@
-<div class="jumbotron">
-    <h1 class="display-3">Jumbo heading</h1>
-    <p class="lead">Jumbo helper text</p>
+<div class="container p-3 my-3 border">
+    <h1 class="display-3">Ejercicios Basicos</h1>
     <hr class="my-2">
-    <p>More info</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" routerLink="/about" role="button">About</a>
-    </p>
-    <div id="container">
+    <div id="container" class="">
         <input type="text" [(ngModel)]="variable">
         <h3>{{variable}}</h3>
         <input type="number" [(ngModel)]="numero1"><input type="number" [(ngModel)]="numero2">
@@ -31,6 +26,3 @@
         <h2 *ngIf="usuario_seleccionado!=null">El usuario que ha seleccionado es {{usuario_seleccionado}}</h2>
     </div>      
 </div>
-<ul>
-    <li (click)="selUser(suario)" *ngFor="let usuario of usuarios">{{usuario.nombre+" "+usuario.apellido}}</li>
-</ul>

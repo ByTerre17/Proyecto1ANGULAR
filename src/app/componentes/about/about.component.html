@@ -1,4 +1,6 @@
-Nombre:<input type="text" [(ngModel)]=nombre><br>
-Apellidos<input type="text" [(ngModel)]=apellidos><br>
-<a routerLink="/hola/{{nombre}}/{{apellidos}}">Mostrar tabla con router link</a><br>
-<a (click)="navegarHacia(nombre,apellidos)">Mostrar tabla a traves del modulo Router</a><br>
+<div class="container p-3 my-3 border">
+Nombre:<input class="form-control" type="text" [(ngModel)]=nombre><br>
+Apellidos<input class="form-control" type="text" [(ngModel)]=apellidos><br>
+<a class="btn btn-primary" routerLink="/hola/{{nombre}}/{{apellidos}}">Mostrar tabla con router link</a><br>
+<a class="btn btn-primary" (click)="navegarHacia(nombre,apellidos)">Mostrar tabla a traves del modulo Router</a><br>
+</div>

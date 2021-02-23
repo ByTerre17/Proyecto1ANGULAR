@@ -1,5 +1,9 @@
-<input type="text" placeholder="nombre" [(ngModel)]="user.nombre">
-<input type="text" placeholder="apellido" [(ngModel)]="user.apellido">
-<input type="number" placeholder="edad" [(ngModel)]="user.edad">
-<button (click)= "insertar()">Insertar</button>
-<span (click)="alerta(usuario.nombre,usuario.apellido,usuario.edad)" *ngFor="let usuario of users"><br>{{usuario.nombre}} {{usuario.apellido}} {{usuario.edad}}</span>
+
+<div class="container p-3 my-3 border">
+    <H1>Formulario de personas</H1>
+<input class="form-control" type="text" placeholder="nombre" [(ngModel)]="user.nombre"><br>
+<input class="form-control" type="text" placeholder="apellido" [(ngModel)]="user.apellido"><br>
+<input class="form-control" type="number" placeholder="edad" [(ngModel)]="user.edad"><br>
+<button class="btn btn-secondary" (click)= "insertar()">Insertar</button><br><br>
+<span (click)="alerta(usuario.nombre,usuario.apellido,usuario.edad)" *ngFor="let usuario of users"><br><ul><li>{{usuario.nombre}} {{usuario.apellido}} {{usuario.edad}}</li></ul></span>
+</div>

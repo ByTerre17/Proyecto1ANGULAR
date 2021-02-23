@@ -11,7 +11,7 @@ edad: number;
 num1:number=0;
 num2:number=0;
 operador:string="";
-operaciones:string[ ]=["suma", "resta", "multiplicacion", "division"];
+operaciones:string[] = ['sumar', 'restar', 'multiplicar', 'dividir']
   constructor() { }
 
   ngOnInit(): void {

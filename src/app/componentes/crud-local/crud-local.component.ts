@@ -9,7 +9,7 @@ import { Nota } from 'src/app/clases/nota';
 export class CrudLocalComponent implements OnInit {
 notaNueva: Nota = new Nota()
 notas: Nota[] = []
-indice:number
+indice:number = null;
 notaSeleccionada: Nota = new Nota()
   constructor() { }
 
@@ -20,7 +20,12 @@ notaSeleccionada: Nota = new Nota()
     }else this.indice=0
   }
   insertarNota(): void{
-    this.notaNueva.id = this.indice
+    if(this.notaNueva.id=null){
+      this.notaNueva.id=1
+    }else{
+      this.notaNueva.id=this.indice
+    }
+     
     this.indice++
     this.notas.push (this.notaNueva) 
     this.notaNueva = new Nota()

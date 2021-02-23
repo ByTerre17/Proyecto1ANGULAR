@@ -1,6 +1,7 @@
+<div class="container p-3 my-3 border">
 <h5>Estructuras de control con ifElse</h5>
 <label for="verdad">
-<input type="checkbox" id="verdad" [(ngModel)]="verdad">
+<input type="checkbox" id="verdad" [(ngModel)]="verdad"> Selector de verdad
 </label>
 <h5> {{verdad? " Es verdad " : " Es mentira " }}con ternario</h5>
 <hr>
@@ -41,16 +42,17 @@
         </tr>     
     </tbody>
 </table>
-<input type="number" placeholder="numero 1" [(ngModel)]=num1>
-<input type="number" placeholder="numero 2" [(ngModel)]=num2>
-<select [(ngModel)]= "operador">
+<input class="form-control" type="number" placeholder="numero 1" [(ngModel)]=num1>
+<input class="form-control" type="number" placeholder="numero 2" [(ngModel)]=num2>
+<select class="form-control" [(ngModel)]= "operador">
 <option *ngFor="let operacion of operaciones"[value]="operacion">{{operacion}}</option>
 </select>
-<div [ngSwitch] = "operador">
-<span *ngSwitchCase = '"suma"'>{{num1+num2}}</span>
-<span *ngSwitchCase = '"restar"'>{{num1-num2}}</span>
-<span *ngSwitchCase = '"multiplicar"'>{{num1*num2}}</span>
-<span *ngSwitchCase = '"dividir"'>{{num1/num2}}</span>
-<span *ngSwitchDefault>Selecciona una operacion</span>
-
+<div [ngSwitch]="operador">
+    <span *ngIf="operador">El resultado de {{operador}} es: </span>
+      <span *ngSwitchCase='"sumar"'>{{num1+num2}}</span>
+      <span *ngSwitchCase='"restar"'>{{num1-num2}}</span>
+      <span *ngSwitchCase='"multiplicar"'>{{num1*num2}}</span>
+      <span *ngSwitchCase='"dividir"'>{{num1/num2}}</span>
+      <span *ngSwitchDefault>Selecciona una operación</span>
+  </div>
 </div>

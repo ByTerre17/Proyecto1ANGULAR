@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     {nombre:"Juan",apellido:"Perez"},
     {nombre:"Carla",apellido:"Ples"},
   ]
-  usuario3: Usuario = new Usuario("Juan","Perez",43)
+  usuario3: Usuario = new Usuario("Juan","Perez")
 
   constructor() { }
   ngOnDestroy(): void {
