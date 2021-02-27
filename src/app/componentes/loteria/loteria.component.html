@@ -1,8 +1,35 @@
-<div class="container p-3 my-3 border">
-<button class="btn btn-secondary" (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Numero</button><br>
-Numero 1: <app-generarnumero #numero1></app-generarnumero>
-Numero 2: <app-generarnumero #numero2></app-generarnumero>
-<app-generarnumero entrada = "13"></app-generarnumero>
-<app-generarnumero [objetoEntrada] = "13"></app-generarnumero>
-</div>
-
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header"><h2>Lotería (Comunicación entre componentes)</h2></div>
+        <div class="card-body">
+          <button class="btn btn-primary btn-block" (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Hacer una Jugada</button>
+          <hr>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <app-generarnumero #numero1></app-generarnumero>
+              </div>
+              <div class="col-md-6">
+                <app-generarnumero #numero2></app-generarnumero>
+              </div>
+            </div>
+          </div>
+          <hr class="py-2">
+  
+          <p class="h3 text-center" *ngIf="numero1.digito&&(numero1.digito==numero2.digito); else manolito">HAS GANADO</p>
+          <ng-template #manolito>
+            <p class="h3 text-center" *ngIf="numero1.digito;else primeraJugada">SIGUE JUGANDO</p>
+            <ng-template #primeraJugada>
+              <p class="h3 text-center">Presione el botón para comenzar</p> 
+            </ng-template>
+          </ng-template>
+          <p class="text-center" *ngIf="numero1.digito">Los números que se han obtenido son: {{numero1.digito}} {{numero2.digito}}</p>
+          <hr class="py-2">
+          <app-generarnumero entrada="1323"></app-generarnumero>
+          <app-generarnumero [objetoEntrada]=objeto></app-generarnumero>
+        </div>
+      </div>
+    </div>
+  </div>
+  

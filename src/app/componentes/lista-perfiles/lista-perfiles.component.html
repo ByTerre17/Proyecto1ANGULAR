@@ -2,8 +2,8 @@
     <div class="card-body">
         <h4 class="card-title">Lista de usuarios registrados</h4>
         <ul>
-            <li (click)='usuarioSel=user; formMensaje.patchValue({idDestinatario:user.id})' *ngFor='let user of usuarios'>{{user.nombre}} {{user.email}}
-                <img src="{{user.imgSrc? user.imgSrc : 'assets/images/no-img.png'}}" width='40px'>
+            <li (click)='usuarioSel=user; formMensaje.patchValue({idDestinatario:user.id})' *ngFor='let user of usuarios'>
+                <strong>Nombre:</strong>{{user.nombre}}  <strong>Correo:</strong>{{user.email}}
             </li>
         </ul>
     </div>
@@ -19,7 +19,7 @@
     </div>
     <div class="card-body">
         <form [formGroup]='formMensaje' (submit)='escribirMensaje()'>
-            <input type="text" formControlName='mensaje' placeholder='escribe tu mensaje'>
+            <input type="text" formControlName='mensaje' placeholder='Escribe tu mensaje'>
             <button type='submit' [disabled]='!formMensaje.valid'>Enviar mensaje</button>
         </form>
     </div>
