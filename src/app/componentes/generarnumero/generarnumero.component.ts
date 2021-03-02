@@ -15,8 +15,7 @@ export class GenerarnumeroComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  obtenAleatorio(): number{
+  obtenAleatorio(): void{
     this.digito = Math.floor(Math.random()* (10))
-    return this.digito
   }
 }
